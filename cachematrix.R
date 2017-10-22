@@ -3,6 +3,8 @@
 
 ## Write a short comment describing this function
 
+##the function takes a matrix x,  moving x and its inv in the "set" environment
+## containing also set,get, setinv, and getinv
 
         makeCacheMatrix <- function(x = matrix()) {
                 inv <- NULL
@@ -25,7 +27,10 @@
 
 
 ## Write a short comment describing this function
-## m substituted by inv, my name for the inverse matrix, and mean -->> solve 
+
+## retrieves inv by means of getinv, picking up from the environment set by the previous func.
+## if inv has been computed already, it's  fetched from the cache
+
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
 
@@ -38,9 +43,5 @@ cacheSolve <- function(x, ...) {
         inv <- solve(data, ...)
         x$setinv(inv)
         inv
-        
-        
-        
-        
         
         }
